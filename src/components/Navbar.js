@@ -2,11 +2,47 @@ import { Layout, Menu, Button } from "antd";
 const { Header } = Layout;
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown, message, Space } from "antd";
 
 const Navbar = () => {
   const { data: session } = useSession();
 
-  console.log("ssss", session);
+  //   console.log("ssss", session);
+
+  const onClick = ({ key }) => {
+    message.info(`Click on item ${key}`);
+  };
+  const items = [
+    {
+      label: "CPU / Processor",
+      key: "1",
+    },
+    {
+      label: "Motherboard",
+      key: "2",
+    },
+    {
+      label: "RAM",
+      key: "3",
+    },
+    {
+      label: "Power Supply Unit",
+      key: "3",
+    },
+    {
+      label: "Storage Device",
+      key: "3",
+    },
+    {
+      label: "Monitor",
+      key: "3",
+    },
+    {
+      label: "Others",
+      key: "3",
+    },
+  ];
 
   return (
     <Header
@@ -24,24 +60,38 @@ const Navbar = () => {
             fontSize: "25px",
           }}
         >
-          NEXT AUTH
+          PC BUILDER
         </Link>
       </div>
       <Menu
         theme="dark"
         mode="horizontal"
         style={{
-          width: "20%",
+          width: "50%",
           display: "flex",
-          fontSize: "20px",
+          fontSize: "15px",
           justifyContent: "space-between",
         }}
       >
+        {/* drop */}
+        <Dropdown
+          menu={{
+            items,
+            onClick,
+          }}
+        >
+          <a onClick={(e) => e.preventDefault()}>
+            <Space>
+              Categories
+              <DownOutlined />
+            </Space>
+          </a>
+        </Dropdown>
         <Link
           style={{ textDecoration: "none", color: "white" }}
-          href="/profile"
+          href="/pc_builder"
         >
-          <items>Profile</items>
+          <items>PC Builder</items>
         </Link>
         <Link style={{ textDecoration: "none", color: "white" }} href="/login">
           <items>Login</items>
