@@ -2,9 +2,8 @@ import { Button } from "antd";
 import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 import Head from "next/head";
 import styles from "@/styles/Login.module.css";
-// import { signIn } from "next-auth/react";
+import { signIn } from "next-auth/react";
 const LoginPage = () => {
-  //  onClick={() => signIn("github", {})}
   return (
     <div>
       <Head>
@@ -14,9 +13,9 @@ const LoginPage = () => {
         <h3>LOGIN</h3>
         <div className={styles.social_icons}>
           {/* <GoogleOutlined /> */}
-          <GithubOutlined />
+          <GithubOutlined onClick={() => signIn("github", {})} />
         </div>
-        <hr />
+        {/* <hr /> */}
         {/* <form>
           <label htmlFor="">Your Email</label>
           <input type="email" />
