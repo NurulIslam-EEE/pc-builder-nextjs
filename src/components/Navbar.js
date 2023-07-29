@@ -4,39 +4,42 @@ import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, message, Space } from "antd";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const { data: session } = useSession();
 
   console.log("ssss", session?.user?.email);
+  const router = useRouter();
 
   const onClick = ({ key }) => {
-    message.info(`Click on item ${key}`);
+    router.push(`${key}`);
   };
   const items = [
     {
       label: "CPU / Processor",
-      key: "1",
+      key: "/pc-builder/Processor",
+      link: "/pc-builder/Processor",
     },
     {
       label: "Motherboard",
-      key: "2",
+      key: "/pc-builder/Processor",
     },
     {
       label: "RAM",
-      key: "3",
+      key: "/pc-builder/Processor",
     },
     {
       label: "Power Supply Unit",
-      key: "3",
+      key: "/pc-builder/Processor",
     },
     {
       label: "Storage Device",
-      key: "3",
+      key: "/pc-builder/Storage Device",
     },
     {
       label: "Monitor",
-      key: "3",
+      key: "/pc-builder/Monitor",
     },
     {
       label: "Others",
