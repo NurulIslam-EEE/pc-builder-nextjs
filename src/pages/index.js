@@ -36,8 +36,6 @@ export async function getStaticProps() {
   const res = await fetch("https://pc-builder-sand.vercel.app/api/v1/product");
   const posts = await res.json();
 
-  console.log("rrrr", posts);
-
   return {
     props: {
       posts,

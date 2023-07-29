@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import styles from "../styles/details..module.css";
 
 function SingleProduct({ product }) {
   const { query } = useRouter();
@@ -7,16 +8,14 @@ function SingleProduct({ product }) {
   console.log("qqqq", query);
   return (
     <div className="container">
-      <div className="flex">
-        <div className="product-img">
-          <img src={product?.image} alt="" />
+      <div className={styles.flex}>
+        <div className={styles.product_img}>
+          <img src={product?.image} alt="" width="100%" />
         </div>
-        <div className="description">
-          <p>{product?.productName} </p>
-          <p>{product?.price} </p>
-          <p>{product?.status} </p>
-          <p>{product?.description} </p>
-
+        <div className={styles.description}>
+          <p>{product?.productName} </p> <br />
+          <p>{product?.price} </p> <br />
+          <p>{product?.status} </p> <br />
           <h3>Features</h3>
           {Object.entries(product.features).map(([key, value]) => {
             console.log("kkkkk", key, value);
@@ -26,10 +25,14 @@ function SingleProduct({ product }) {
               </p>
             );
           })}
-
           <p>{product?.averageRating}/5 </p>
           <h3>Reviews</h3>
         </div>
+      </div>
+      <div>
+        <br />
+        <h3>Description</h3>
+        <p>{product?.description} </p>
       </div>
     </div>
   );

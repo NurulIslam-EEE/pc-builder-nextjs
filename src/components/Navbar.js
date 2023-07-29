@@ -8,7 +8,7 @@ import { Dropdown, message, Space } from "antd";
 const Navbar = () => {
   const { data: session } = useSession();
 
-  //   console.log("ssss", session);
+  console.log("ssss", session?.user?.email);
 
   const onClick = ({ key }) => {
     message.info(`Click on item ${key}`);
@@ -93,14 +93,21 @@ const Navbar = () => {
         >
           <items>PC Builder</items>
         </Link>
-        <Link style={{ textDecoration: "none", color: "white" }} href="/login">
-          <items>Login</items>
-        </Link>
-        <items>
-          <Button type="primary" danger onClick={signOut}>
-            Logout
-          </Button>
-        </items>
+        {!session?.user?.email && (
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            href="/login"
+          >
+            <items>Login</items>
+          </Link>
+        )}
+        {session?.user?.email && (
+          <items>
+            <Button type="primary" danger onClick={signOut}>
+              Logout
+            </Button>
+          </items>
+        )}
       </Menu>
     </Header>
   );

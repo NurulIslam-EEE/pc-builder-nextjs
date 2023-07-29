@@ -2,12 +2,23 @@ import { Button } from "antd";
 import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 import Head from "next/head";
 import styles from "@/styles/Login.module.css";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 const LoginPage = () => {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session?.user?.email) {
+      router.push("/");
+    }
+  }, [session?.user?.email, router]);
+
   return (
     <div>
       <Head>
-        <title>Next Login</title>
+        <title>Login</title>
       </Head>
       <div className={styles.form}>
         <h3>LOGIN</h3>

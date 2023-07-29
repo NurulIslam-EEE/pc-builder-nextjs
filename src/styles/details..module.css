@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+  background: white;
+}
+
+.product_img {
+  width: 45%;
+}
+
+.description {
+  width: 45%;
+}
+
+@media (max-width: 800px) {
+  .flex {
+    flex-direction: column;
+  }
+  .product_img {
+    width: 100%;
+  }
+
+  .description {
+    width: 100%;
+  }
+}
