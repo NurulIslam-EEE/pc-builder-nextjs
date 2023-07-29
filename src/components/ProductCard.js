@@ -5,23 +5,32 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
-const { Meta } = Card;
-const ProductCard = ({ data }) => (
-  <Card
-    hoverable
-    style={{ width: 240 }}
-    cover={
-      <img
-        alt="example"
-        src="https://www.startech.com.bd/image/cache/catalog/graphics-card/colorful/geforce-rtx-4080-16gb-nb-ex-v/geforce-rtx-4080-16gb-nb-ex-v-01-200x200.webp"
-      />
-    }
-  >
-    <Meta title="Europe Street beat" />
-    <p>Monitor</p>
-    <p>2228</p>
-    <p>stock out</p>
-    <p>5.5/5</p>
-  </Card>
-);
+import { useRouter } from "next/router";
+import Link from "next/link";
+
+const ProductCard = ({ data }) => {
+  const { Meta } = Card;
+  const router = useRouter();
+
+  const navigate = (id) => {
+    router.push(`/${id}`);
+  };
+
+  return (
+    <Link href={`/${data?._id}`}>
+      <Card
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt="example" src={data?.image} />}
+        // onClick={() => navigate(data?._id)}
+      >
+        <Meta title={data.productName} />
+        <p>{data?.category[0]}</p>
+        <p>{data?.price}</p>
+        <p>{data?.status}</p>
+        <p>{data?.averageRating}/5</p>
+      </Card>
+    </Link>
+  );
+};
 export default ProductCard;

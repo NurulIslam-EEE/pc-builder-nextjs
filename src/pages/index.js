@@ -7,7 +7,8 @@ import Banner from "@/components/Banner";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ posts }) {
+  console.log("ppp", posts);
   return (
     <>
       <Head>
@@ -20,7 +21,11 @@ export default function Home() {
         <div className={`${styles.container}`}>
           {" "}
           <Banner />
-          <ProductCard />
+          <div className={`${styles.home_product}`}>
+            {posts?.data?.map((post) => {
+              return <ProductCard key={post?._id} data={post} />;
+            })}
+          </div>
         </div>
       </main>
     </>
@@ -28,8 +33,10 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://.../posts");
+  const res = await fetch("https://pc-builder-sand.vercel.app/api/v1/product");
   const posts = await res.json();
+
+  console.log("rrrr", posts);
 
   return {
     props: {
