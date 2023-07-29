@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../styles/pcBuilding.module.css";
+import styles from "../../styles/pcBuilding.module.css";
 
 function PcBuilder() {
   const data = [

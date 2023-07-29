@@ -18,32 +18,32 @@ const Navbar = () => {
   const items = [
     {
       label: "CPU / Processor",
-      key: "/pc-builder/Processor",
-      link: "/pc-builder/Processor",
+      key: "/category/Processor",
+      link: "/category/Processor",
     },
     {
       label: "Motherboard",
-      key: "/pc-builder/Processor",
+      key: "/category/Processor",
     },
     {
       label: "RAM",
-      key: "/pc-builder/Processor",
+      key: "/category/Processor",
     },
     {
       label: "Power Supply Unit",
-      key: "/pc-builder/Processor",
+      key: "/category/Processor",
     },
     {
       label: "Storage Device",
-      key: "/pc-builder/Storage Device",
+      key: "/category/Storage Device",
     },
     {
       label: "Monitor",
-      key: "/pc-builder/Monitor",
+      key: "/category/Monitor",
     },
     {
       label: "Others",
-      key: "3",
+      key: "/category/Others",
     },
   ];
 

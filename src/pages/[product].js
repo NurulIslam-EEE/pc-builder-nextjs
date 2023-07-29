@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import styles from "../styles/details..module.css";
+import styles from "../styles/details.module.css";
 
 function SingleProduct({ product }) {
   const { query } = useRouter();
