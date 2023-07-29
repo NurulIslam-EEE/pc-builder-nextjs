@@ -5,7 +5,34 @@ function SingleProduct({ product }) {
   const { query } = useRouter();
 
   console.log("qqqq", query);
-  return <div>{product?.status}</div>;
+  return (
+    <div className="container">
+      <div className="flex">
+        <div className="product-img">
+          <img src={product?.image} alt="" />
+        </div>
+        <div className="description">
+          <p>{product?.productName} </p>
+          <p>{product?.price} </p>
+          <p>{product?.status} </p>
+          <p>{product?.description} </p>
+
+          <h3>Features</h3>
+          {Object.entries(product.features).map(([key, value]) => {
+            console.log("kkkkk", key, value);
+            return (
+              <p key={key}>
+                {key}:{value}
+              </p>
+            );
+          })}
+
+          <p>{product?.averageRating}/5 </p>
+          <h3>Reviews</h3>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SingleProduct;
@@ -31,7 +58,7 @@ export async function getServerSideProps(context) {
   );
   const product = await res.json();
 
-  console.log("pppp", product);
+  // console.log("pppp", product);
 
   return {
     props: {
