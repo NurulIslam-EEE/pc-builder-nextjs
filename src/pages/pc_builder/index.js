@@ -20,6 +20,19 @@ function PcBuilder() {
   ];
   const value = useContext(PCBuildContext);
 
+  const handleCompete = () => {
+    if (
+      (value?.message?.Processor.length < 1) |
+      (value?.message.Motherboard.length < 1) |
+      (value?.message.RAM.length < 1) |
+      (value?.message.PowerSupplyUnit.length < 1) |
+      (value?.message.StorageDevice.length < 1) |
+      (value?.message.Monitor.length < 1)
+    ) {
+      alert("Please select all");
+    }
+  };
+
   // console.log("dddd", value);
   return (
     <div className={`container`}>
@@ -47,6 +60,10 @@ function PcBuilder() {
             </>
           );
         })}
+
+        <button onClick={handleCompete} className={styles.complete}>
+          Complete Build
+        </button>
       </div>
     </div>
   );
