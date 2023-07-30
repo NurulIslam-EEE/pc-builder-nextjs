@@ -1,14 +1,21 @@
 import { createContext, useState } from "react";
 
-export const PCBuild = createContext(null);
+export const PCBuildContext = createContext(null);
 
 function Context({ children }) {
-  const [message, setMessage] = useState({});
+  const [message, setMessage] = useState({
+    Processor: [],
+    Motherboard: [],
+    RAM: [],
+    PowerSupplyUnit: [],
+    StorageDevice: [],
+    Monitor: [],
+  });
 
   return (
-    <PCBuild.Provider value={{ message, setMessage }}>
+    <PCBuildContext.Provider value={{ message, setMessage }}>
       {children}
-    </PCBuild.Provider>
+    </PCBuildContext.Provider>
   );
 }
 

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from "../../styles/categoryPc.module.css";
+import { PCBuildContext } from "@/context/context";
 
 function BuilderCategory({ category }) {
-  console.log("category", category);
+  const value = useContext(PCBuildContext);
+
   return (
     <div className={`${styles.background} container`}>
       {category.length > 0 &&
