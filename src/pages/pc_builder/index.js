@@ -9,7 +9,7 @@ function PcBuilder() {
     router.push(`pc_builder/${data}`);
   };
 
-  const [] = useState({
+  const [selected, setSelected] = useState({
     Processor: [],
     Motherboard: [],
     RAM: [],
