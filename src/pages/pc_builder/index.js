@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "../../styles/pcBuilding.module.css";
 import { useRouter } from "next/router";
+import { PCBuildContext } from "@/context/context";
 
 function PcBuilder() {
   const router = useRouter();
@@ -17,19 +18,33 @@ function PcBuilder() {
     "Storage Device",
     "Monitor",
   ];
+  const value = useContext(PCBuildContext);
+
+  // console.log("dddd", value);
   return (
     <div className={`container`}>
       <div className={styles.category_card}>
         <div className={styles.category_header}>
-          <p>Core Components</p>
+          <h3>Core Components</h3>
         </div>
 
         {data.map((item) => {
+          const itemText = item.replaceAll(" ", "");
+
           return (
-            <div key={item} className={styles.category_components}>
-              <p>{item}</p>
-              <button onClick={() => handleNavigate(item)}>Select</button>
-            </div>
+            <>
+              {value?.message[itemText]?.length > 0 ? (
+                <div key={item} className={styles.category_components}>
+                  <p>{value?.message[itemText][0]?.productName}</p>
+                  <p>৳.{value?.message[itemText][0]?.price}</p>
+                </div>
+              ) : (
+                <div key={item} className={styles.category_components}>
+                  <p>{item}</p>
+                  <button onClick={() => handleNavigate(item)}>Select</button>
+                </div>
+              )}
+            </>
           );
         })}
       </div>

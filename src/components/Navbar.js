@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const Navbar = () => {
   const { data: session } = useSession();
 
-  console.log("ssss", session?.user?.email);
+  // console.log("ssss", session?.user?.email);
   const router = useRouter();
 
   const onClick = ({ key }) => {

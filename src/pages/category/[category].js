@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 function Category({ category }) {
   const router = useRouter();
 
-  console.log("cccc", category);
+  // console.log("cccc", category);
   const handleNavigate = () => {
     router.push(``);
   };

@@ -2,6 +2,11 @@
   background: #f2f4f8;
   min-height: 80vh;
 }
+.category_header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
 .product_thumb {
   min-width: 300px;
   margin: 0 auto;
