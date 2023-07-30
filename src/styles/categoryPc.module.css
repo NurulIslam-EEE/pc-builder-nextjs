@@ -1,0 +1,45 @@
+.background {
+  background: #f2f4f8;
+  min-height: 80vh;
+}
+.product_thumb {
+  min-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 10px 8px;
+}
+
+.add_button {
+  display: block;
+  min-width: 100px;
+  text-align: center;
+  margin-top: 15px;
+  background: #3749bb;
+  display: inline-block;
+  border: 2px solid #3749bb;
+  padding: 0 20px;
+  margin: 0;
+  height: 42px;
+  line-height: 38px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .product_thumb {
+    flex-direction: column;
+  }
+}

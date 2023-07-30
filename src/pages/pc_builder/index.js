@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "../../styles/pcBuilding.module.css";
 import { useRouter } from "next/router";
@@ -8,6 +8,15 @@ function PcBuilder() {
   const handleNavigate = (data) => {
     router.push(`pc_builder/${data}`);
   };
+
+  const [] = useState({
+    Processor: [],
+    Motherboard: [],
+    RAM: [],
+    PowerSupplyUnit: [],
+    StorageDevice: [],
+    Monitor: [],
+  });
   const data = [
     "Processor",
     "Motherboard",
@@ -17,7 +26,7 @@ function PcBuilder() {
     "Monitor",
   ];
   return (
-    <div className="container">
+    <div className={`container`}>
       <div className={styles.category_card}>
         <div className={styles.category_header}>
           <p>Core Components</p>

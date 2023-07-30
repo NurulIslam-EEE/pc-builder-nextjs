@@ -4,7 +4,35 @@ import styles from "../../styles/categoryPc.module.css";
 
 function BuilderCategory({ category }) {
   console.log("category", category);
-  return <div></div>;
+  return (
+    <div className={`${styles.background} container`}>
+      {category.length > 0 &&
+        category.map((cat) => {
+          return (
+            <div key={cat?._id} className={styles.product_thumb}>
+              <div className="image">
+                <img src={cat?.image} alt="" width="200px" />
+              </div>
+              <div className="description">
+                <h3> {cat?.productName}</h3>
+
+                {Object.entries(cat.features).map(([key, value]) => {
+                  console.log("kkkkk", key, value);
+                  return (
+                    <p key={key}>
+                      {key}:{value}
+                    </p>
+                  );
+                })}
+              </div>
+              <div className="action">
+                <button className={styles.add_button}>Add</button>
+              </div>
+            </div>
+          );
+        })}
+    </div>
+  );
 }
 
 export default BuilderCategory;
