@@ -63,7 +63,7 @@ const Navbar = () => {
             fontSize: "25px",
           }}
         >
-          PC BUILDER
+          TECH WORLD
         </Link>
       </div>
       <Menu
