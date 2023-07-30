@@ -1,8 +1,13 @@
 import React from "react";
 
 import styles from "../../styles/pcBuilding.module.css";
+import { useRouter } from "next/router";
 
 function PcBuilder() {
+  const router = useRouter();
+  const handleNavigate = (data) => {
+    router.push(`pc_builder/${data}`);
+  };
   const data = [
     "Processor",
     "Motherboard",
@@ -22,7 +27,7 @@ function PcBuilder() {
           return (
             <div key={item} className={styles.category_components}>
               <p>{item}</p>
-              <button>Select</button>
+              <button onClick={() => handleNavigate(item)}>Select</button>
             </div>
           );
         })}

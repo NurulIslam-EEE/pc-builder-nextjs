@@ -29,6 +29,17 @@ function Category({ category }) {
 
 export default Category;
 
+// export async function getStaticPaths() {
+//   const res = await fetch("https://.../posts");
+//   const posts = await res.json();
+
+//   const paths = posts.map((post) => ({
+//     params: { id: post.id },
+//   }));
+
+//   return { paths, fallback: false };
+// }
+
 export async function getServerSideProps(context) {
   const { params } = context;
 
