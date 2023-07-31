@@ -19,7 +19,7 @@ function Category({ category }) {
     );
   }
   return (
-    <div className="container">
+    <div className="container grid-product">
       {category?.map((cat) => {
         return <ProductCard key={cat?._id} data={cat} />;
       })}

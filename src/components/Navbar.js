@@ -89,12 +89,12 @@ const Navbar = () => {
           </Link>
         )}
         {session?.user?.email && (
-          <items>
+          <items className="logout-btn">
             <Button
               type="primary"
               danger
               onClick={signOut}
-              className="nav-link"
+              className="nav-link logout-btn"
             >
               Logout
             </Button>
