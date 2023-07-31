@@ -55,27 +55,9 @@ const Navbar = () => {
       }}
     >
       <div className="demo-logo">
-        <Link
-          href="/"
-          style={{
-            textDecoration: "none",
-            color: "white",
-            fontSize: "25px",
-          }}
-        >
-          TECH WORLD
-        </Link>
+        <Link href="/">TECH WORLD</Link>
       </div>
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        style={{
-          width: "50%",
-          display: "flex",
-          fontSize: "15px",
-          justifyContent: "space-between",
-        }}
-      >
+      <Menu theme="dark" mode="horizontal">
         {/* drop */}
         <Dropdown
           menu={{
@@ -84,7 +66,7 @@ const Navbar = () => {
           }}
         >
           <a onClick={(e) => e.preventDefault()}>
-            <Space>
+            <Space className="nav-link">
               Categories
               <DownOutlined />
             </Space>
@@ -93,6 +75,7 @@ const Navbar = () => {
         <Link
           style={{ textDecoration: "none", color: "white" }}
           href="/pc_builder"
+          className="nav-link"
         >
           <items>PC Builder</items>
         </Link>
@@ -100,13 +83,19 @@ const Navbar = () => {
           <Link
             style={{ textDecoration: "none", color: "white" }}
             href="/login"
+            className="nav-link"
           >
             <items>Login</items>
           </Link>
         )}
         {session?.user?.email && (
           <items>
-            <Button type="primary" danger onClick={signOut}>
+            <Button
+              type="primary"
+              danger
+              onClick={signOut}
+              className="nav-link"
+            >
               Logout
             </Button>
           </items>

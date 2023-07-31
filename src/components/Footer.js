@@ -50,8 +50,8 @@ function Footer() {
 
             <div>
               {" "}
-              <Link className="footer-link" href="/project">
-                Project
+              <Link className="footer-link" href="/login">
+                Login
               </Link>
             </div>
           </div>

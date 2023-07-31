@@ -46,7 +46,7 @@ export async function getServerSideProps(context) {
   let product = { data: [] };
   try {
     const res = await fetch(
-      `https://pc-builder-sand.vercel.app/api/v1/product?category=${params.category}`
+      `${process.env.BACKEND_URL}/api/v1/product?category=${params.category}`
     );
     product = await res.json();
   } catch {}
