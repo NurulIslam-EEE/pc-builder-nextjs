@@ -36,10 +36,16 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   let posts = {};
+
+  // if (typeof window == "undefined") {
+  //   return {
+  //     props: {
+  //       Processor: [],
+  //     },
+  //   };
+  // }
   try {
-    const res = await fetch(
-      "https://pc-builder-sand.vercel.app/api/v1/product/home"
-    );
+    const res = await fetch(`${process.env.BACKEND_URL}/api/v1/product/home`);
 
     posts = await res.json();
   } catch {}
