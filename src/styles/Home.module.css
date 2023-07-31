@@ -7,6 +7,11 @@
   min-height: 100vh;
 }
 
+.main h4 {
+  margin: 20px;
+  font-size: 25px;
+}
+
 .home_product {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

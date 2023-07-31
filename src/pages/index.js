@@ -22,9 +22,59 @@ export default function Home({ posts }) {
           {" "}
           <Banner />
           <h3 className={`${styles.h3}`}>Featured Products</h3>
+          {/* 1 */}
+          <h4>Processor</h4>
           <div className={`${styles.home_product}`}>
             {posts?.data &&
               posts?.data?.Processor?.map((post) => {
+                return <ProductCard key={post?._id} data={post} />;
+              })}
+          </div>
+          <h4>Motherboard</h4>
+          {/* 2 */}
+          <div className={`${styles.home_product}`}>
+            {posts?.data &&
+              posts?.data?.Motherboard?.map((post) => {
+                return <ProductCard key={post?._id} data={post} />;
+              })}
+          </div>
+          <h4>RAM</h4>
+          {/* 3 */}
+          <div className={`${styles.home_product}`}>
+            {posts?.data &&
+              posts?.data?.RAM?.map((post) => {
+                return <ProductCard key={post?._id} data={post} />;
+              })}
+          </div>
+          {/* 4 */}
+          <h4>Power Supply Unit</h4>
+          <div className={`${styles.home_product}`}>
+            {posts?.data &&
+              posts?.data?.PowerSupplyUnit?.map((post) => {
+                return <ProductCard key={post?._id} data={post} />;
+              })}
+          </div>
+          {/* 5 */}
+          <h4>Storage Device</h4>
+          <div className={`${styles.home_product}`}>
+            {posts?.data &&
+              posts?.data?.StorageDevice?.map((post) => {
+                return <ProductCard key={post?._id} data={post} />;
+              })}
+          </div>
+          {/* 6 */}
+          <h4>Monitors</h4>
+          <div className={`${styles.home_product}`}>
+            {posts?.data &&
+              posts?.data?.Monitor?.map((post) => {
+                return <ProductCard key={post?._id} data={post} />;
+              })}
+          </div>
+          {/*  */}
+          <h4>Others</h4>
+          <div className={`${styles.home_product}`}>
+            {posts?.data &&
+              posts?.data?.Others?.map((post) => {
                 return <ProductCard key={post?._id} data={post} />;
               })}
           </div>
@@ -35,12 +85,28 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  let posts = {};
+  let posts = {
+    Processor: [],
+    Motherboard: [],
+    RAM: [],
+    PowerSupplyUnit: [],
+    StorageDevice: [],
+    Monitor: [],
+    Others: [],
+  };
 
   // if (typeof window == "undefined") {
   //   return {
   //     props: {
+  //      posts:{
   //       Processor: [],
+  //       Motherboard: [],
+  //       RAM: [],
+  //       PowerSupplyUnit: [],
+  //       StorageDevice: [],
+  //       Monitor: [],
+  //       Others: [],
+  //      }
   //     },
   //   };
   // }
