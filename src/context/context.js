@@ -33,8 +33,21 @@ function Context({ children }) {
     }
   };
 
+  const clearCart = () => {
+    setMessage({
+      Processor: [],
+      Motherboard: [],
+      RAM: [],
+      PowerSupplyUnit: [],
+      StorageDevice: [],
+      Monitor: [],
+    });
+  };
+
   return (
-    <PCBuildContext.Provider value={{ message, setMessage, handleAddValue }}>
+    <PCBuildContext.Provider
+      value={{ message, setMessage, handleAddValue, clearCart }}
+    >
       {children}
     </PCBuildContext.Provider>
   );

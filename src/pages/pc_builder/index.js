@@ -4,6 +4,9 @@ import styles from "../../styles/pcBuilding.module.css";
 import { useRouter } from "next/router";
 import { PCBuildContext } from "@/context/context";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function PcBuilder() {
   const router = useRouter();
   const handleNavigate = (data) => {
@@ -29,8 +32,13 @@ function PcBuilder() {
       (value?.message.StorageDevice.length < 1) |
       (value?.message.Monitor.length < 1)
     ) {
-      alert("Please select all");
+      toast.error("Please select all components");
+
+      return;
     }
+
+    toast("Successfully completed");
+    value.clearCart();
   };
 
   // console.log("dddd", value);
