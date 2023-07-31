@@ -9,5 +9,6 @@
 <li> Customer can login </li>
 <li> Customer can build own pc </li>
 <li> Customer can see details of a product </li>
+<li> Customer can see category wise  product </li>
 
 </ul>

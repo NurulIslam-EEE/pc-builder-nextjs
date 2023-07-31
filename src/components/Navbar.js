@@ -53,6 +53,7 @@ const Navbar = () => {
         display: "flex",
         justifyContent: "space-between",
       }}
+      className="header"
     >
       <div className="demo-logo">
         <Link href="/">TECH WORLD</Link>
@@ -89,7 +90,7 @@ const Navbar = () => {
           </Link>
         )}
         {session?.user?.email && (
-          <items className="logout-btn">
+          <items className="logout-btn-container">
             <Button
               type="primary"
               danger

@@ -246,6 +246,12 @@ footer ul li {
   font-size: 20px;
   color: white;
 }
+.logout-btn-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .logout-btn {
   display: flex;
@@ -285,7 +291,7 @@ footer ul li {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .grid-product {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -297,6 +303,14 @@ footer ul li {
   .nav-link {
     font-size: 8px;
     color: white;
+  }
+  .logout-btn {
+    font-size: 10px;
+    width: 50px;
+    height: 25px;
+  }
+  .header {
+    padding: 5px 8px;
   }
 
   footer {
