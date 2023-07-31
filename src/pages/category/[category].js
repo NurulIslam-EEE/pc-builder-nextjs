@@ -43,10 +43,13 @@ export default Category;
 export async function getServerSideProps(context) {
   const { params } = context;
 
-  const res = await fetch(
-    `https://pc-builder-sand.vercel.app/api/v1/product?category=${params.category}`
-  );
-  const product = await res.json();
+  let product = { data: [] };
+  try {
+    const res = await fetch(
+      `https://pc-builder-sand.vercel.app/api/v1/product?category=${params.category}`
+    );
+    product = await res.json();
+  } catch {}
 
   // console.log("ccccc", product, params);
 

@@ -43,8 +43,8 @@ function Footer() {
 
             <div>
               {" "}
-              <Link className="footer-link" href="/about">
-                About Us
+              <Link className="footer-link" href="/pc_build">
+                Pc Build
               </Link>
             </div>
 
@@ -52,20 +52,6 @@ function Footer() {
               {" "}
               <Link className="footer-link" href="/project">
                 Project
-              </Link>
-            </div>
-
-            <div>
-              {" "}
-              <Link className="footer-link" href="/contact">
-                Contact
-              </Link>
-            </div>
-
-            <div>
-              {" "}
-              <Link className="footer-link" href="/services">
-                Service
               </Link>
             </div>
           </div>

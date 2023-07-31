@@ -18,14 +18,16 @@ const LoginPage = () => {
   return (
     <div>
       <Head>
-        <title>Login</title>
+        <title>Login with github</title>
       </Head>
       <div className={styles.form}>
-        <h3>LOGIN</h3>
-        <div className={styles.social_icons}>
-          {/* <GoogleOutlined /> */}
-          <GithubOutlined onClick={() => signIn("github", {})} />
+        <div className={styles.login_container}>
+          <h3>LOGIN</h3>
+          <div className={styles.social_icons}>
+            <GithubOutlined onClick={() => signIn("github", {})} />
+          </div>
         </div>
+
         {/* <hr /> */}
         {/* <form>
           <label htmlFor="">Your Email</label>
