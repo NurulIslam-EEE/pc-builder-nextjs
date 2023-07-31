@@ -20,7 +20,7 @@ const ProductCard = ({ data }) => {
     <Link href={`/${data?._id}`}>
       <Card
         hoverable
-        style={{ width: 240 }}
+        style={{ width: 240, marginTop: "10px" }}
         cover={<img alt="example" src={data?.image} />}
         // onClick={() => navigate(data?._id)}
       >

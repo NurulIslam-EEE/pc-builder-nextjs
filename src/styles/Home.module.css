@@ -29,20 +29,19 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .home_product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .home_product {
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
-}
-
-@media (prefers-color-scheme: dark) {
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
 }
