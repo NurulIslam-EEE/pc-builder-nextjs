@@ -5,8 +5,8 @@ import banner from "../assets/banner.webp";
 
 function Banner() {
   return (
-    <div style={{ width: "100%" }}>
-      <Image src={banner} width="100%" alt="drawing_image" />
+    <div className="banner_container">
+      <img src="/images/banner.webp" alt="drawing_image" />
     </div>
   );
 }

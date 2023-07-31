@@ -18,9 +18,10 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div className={`${styles.container}`}>
+        <div className={`${styles.container} ${styles.homes}`}>
           {" "}
           <Banner />
+          <h3 className={`${styles.h3}`}>Featured Products</h3>
           <div className={`${styles.home_product}`}>
             {posts?.data?.map((post) => {
               return <ProductCard key={post?._id} data={post} />;
@@ -33,8 +34,14 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://pc-builder-sand.vercel.app/api/v1/product");
-  const posts = await res.json();
+  let posts = {};
+  try {
+    const res = await fetch(
+      "https://pc-builder-sand.vercel.app/api/v1/product/home"
+    );
+
+    posts = await res.json();
+  } catch {}
 
   return {
     props: {
