@@ -23,7 +23,7 @@ export default function Home({ posts }) {
           <Banner />
           <h3 className={`${styles.h3}`}>Featured Products</h3>
           <div className={`${styles.home_product}`}>
-            {posts?.data?.map((post) => {
+            {posts?.data?.Processor?.map((post) => {
               return <ProductCard key={post?._id} data={post} />;
             })}
           </div>
